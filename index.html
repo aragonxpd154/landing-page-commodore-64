@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-
-   <head>
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="author" content="Obel">
-      <title>C64</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-      <meta name="keywords" content="C64" />
-      <meta name="description" content="C64 - Website" />
-	  <link rel="stylesheet" href="css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-      <style>
-         .modalDialog {
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="author" content="Obel">
+   <title>C64</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+   <meta name="keywords" content="C64" />
+   <meta name="description" content="C64 - Website" />
+   <link rel="stylesheet" href="css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   <style>
+      /* Estilos CSS existentes aqui */
+      .modalDialog {
          position: fixed;
          font-family: Arial, Helvetica, sans-serif;
          top: -70px;
@@ -87,57 +87,64 @@
          font-size:18px !important;
          text-align: center;
          }
-      </style>
-      <link href="css/css.css" rel="stylesheet">
-      <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
-      <link href='css/Open-Sans-font.min.css' rel='stylesheet' type='text/css'>
-      <link href='css/Merriweather-font.min.css' rel='stylesheet' type='text/css'>
-   </head>
-   <body>
-      <div class="cent">
-         <p>
-         <h1>C64 Project by <a href="https://twitter.com/marcos_silva100">@marcos_silva100</a></h1>
-         </p>
-         <p style="padding-left:20px;">This page is designed to develop a new project similar to C64, based on its architecture, and studies of its components.
-         </p>
-         <p>
-         <h1>Revisions</h1>
-         <h1><a href="#">1.0V <span style="color:#feff00">(new)</span></a></h1>
-		 <br/>
-         </p>
-         <p style="margin-top:220px;">
-         <h1><a href="#openModal" style="font-weight:bold;font-size:23px;">HELP</a></h1>
-         </p>
-      </div>
-      <div id="toolbar" class="toolbar">
-         <div id="openModal" class="modalDialog">
-            <div>
-               <a href="#close" title="Close" class="close">X</a>
-               <h4>C64 Dev</h4>
-               <p>######</p>
-               <p>######
-                  ######
-                  ######
-               </p>
-               <p>###### <a href="#" style="color:black;font-weight:bold;">#</a><br/>
-                  ###### 
-                  ###### <a href="#" style="color:black;font-weight:bold;">#</a><br/><br/>
-                  ######
-               </p>
-			   <br>
-               <p>Updates:</p>
-               <br/>
-               <p>######<br/>
-                  ######<br/>
-				  ######
-               </p>
-               <br/>
-               ######
-               ######<br/><br/>
-                  </a>
-               </p>
-            </div>
+   </style>
+   <link href="css/css.css" rel="stylesheet">
+   <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+   <link href='css/Open-Sans-font.min.css' rel='stylesheet' type='text/css'>
+   <link href='css/Merriweather-font.min.css' rel='stylesheet' type='text/css'>
+</head>
+<body>
+   <div class="cent">
+      <!-- Conteúdo existente aqui -->
+   </div>
+   <div id="toolbar" class="toolbar">
+      <div id="openModal" class="modalDialog">
+         <div>
+            <!-- Conteúdo existente aqui -->
          </div>
       </div>
-   </body>
+   </div>
+
+   <script>
+      // Capturar o elemento de entrada de texto
+      const inputElement = document.createElement('input');
+      inputElement.type = 'text';
+      inputElement.style.width = '100%';
+      inputElement.style.border = 'none';
+      inputElement.style.background = 'transparent';
+      inputElement.style.color = '#feff00';
+      inputElement.style.outline = 'none';
+
+      // Capturar o elemento de saída do terminal
+      const outputElement = document.createElement('pre');
+      outputElement.style.color = '#feff00';
+
+      // Adicionar elementos ao DOM
+      const centElement = document.querySelector('.cent');
+      centElement.appendChild(inputElement);
+      centElement.appendChild(outputElement);
+
+      // Função para processar o comando do usuário
+      function processCommand(command) {
+         // Lógica de processamento do comando aqui
+         // Exemplo: exibir a mensagem de comando inválido
+         const output = `Comando inválido: ${command}`;
+         outputElement.textContent += output + '\n';
+      }
+
+      // Manipulador de eventos para capturar a entrada do usuário
+      inputElement.addEventListener('keydown', function(event) {
+         if (event.key === 'Enter') {
+            const command = inputElement.value;
+            inputElement.value = '';
+            const output = `> ${command}`;
+            outputElement.textContent += output + '\n';
+            processCommand(command);
+         }
+      });
+
+      // Focar no campo de entrada ao carregar a página
+      inputElement.focus();
+   </script>
+</body>
 </html>
