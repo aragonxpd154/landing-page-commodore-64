@@ -87,6 +87,10 @@
          font-size:18px !important;
          text-align: center;
          }
+         input[type="text"],
+         pre {
+            font-family: 'Press Start 2P', 'Helvetica Neue', Arial, sans-serif;
+         }
    </style>
    <link href="css/css.css" rel="stylesheet">
    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -130,6 +134,7 @@
          // Exemplo: exibir a mensagem de comando inválido
          const output = `Comando inválido: ${command}`;
          outputElement.textContent += output + '\n';
+         outputElement.scrollTop = outputElement.scrollHeight;
       }
 
       // Manipulador de eventos para capturar a entrada do usuário
