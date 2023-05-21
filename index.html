@@ -87,10 +87,27 @@
          font-size:18px !important;
          text-align: center;
          }
-         input[type="text"],
-         pre {
-            font-family: 'Press Start 2P', 'Helvetica Neue', Arial, sans-serif;
+         
+      .pre {
+         position: relative;
+      }
+      
+      .pre::after {
+         content: '';
+         position: absolute;
+         top: 0;
+         right: 0;
+         width: 6px;
+         height: 14px;
+         background-color: #feff00;
+         animation: blink 0.7s step-end infinite;
+      }
+      
+      @keyframes blink {
+         50% {
+            background-color: transparent;
          }
+      }
    </style>
    <link href="css/css.css" rel="stylesheet">
    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -121,6 +138,7 @@
 
       // Capturar o elemento de saída do terminal
       const outputElement = document.createElement('pre');
+      outputElement.classList.add('pre');
       outputElement.style.color = '#feff00';
 
       // Adicionar elementos ao DOM
@@ -134,7 +152,6 @@
          // Exemplo: exibir a mensagem de comando inválido
          const output = `Comando inválido: ${command}`;
          outputElement.textContent += output + '\n';
-         outputElement.scrollTop = outputElement.scrollHeight;
       }
 
       // Manipulador de eventos para capturar a entrada do usuário
@@ -145,6 +162,7 @@
             const output = `> ${command}`;
             outputElement.textContent += output + '\n';
             processCommand(command);
+            outputElement.scrollTop = outputElement.scrollHeight; // Deslocar para baixo a cada nova entrada de comando
          }
       });
 
