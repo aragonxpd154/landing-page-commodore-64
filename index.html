@@ -70,14 +70,10 @@
          }
          .cent {
          position:absolute;
-         top:15%;
-         left:15%;
-         margin-top:-50px; /* this is half the height of your div*/  
-         margin-left:-100px; /*this is half of width of your div*/
-         background-color:#211bae;
-         color:#5f53fe;
-         width:80%;
-         height:80%;
+         top:50%;
+         left:50%;
+         transform: translate(-50%, -50%);
+         text-align: center;
          }
          p {
          display: inline-block;
@@ -87,29 +83,12 @@
          font-size:18px !important;
          text-align: center;
          }
-         
-      .pre {
-         position: relative;
-         overflow-y: auto;
-         max-height: 300px; /* Defina uma altura máxima para o terminal */
-      }
-      
-      .pre::after {
-         content: '';
-         position: absolute;
-         top: 0;
-         right: 0;
-         width: 6px;
-         height: 14px;
-         background-color: #feff00;
-         animation: blink 0.7s step-end infinite;
-      }
-      
-      @keyframes blink {
-         50% {
-            background-color: transparent;
+         .terminal {
+         font-family: 'Press Start 2P', 'Helvetica Neue', Arial, sans-serif;
+         color: #feff00;
+         padding: 10px;
+         background-color: #000;
          }
-      }
    </style>
    <link href="css/css.css" rel="stylesheet">
    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -118,12 +97,16 @@
 </head>
 <body>
    <div class="cent">
-      <pre>
-       **** COMMODORE  64 BASIC V2 ****
-
-      64K RAM SYSTEM  38911 BASIC BYTES FREE
-
-      READY.
+      <pre class="terminal">
+         <code>
+ ________  ___  ___  ________  ________  ___  ________
+|\   __  \|\  \|\  \|\   __  \|\   __  \|\  \|\   ___  \
+\ \  \|\  \ \  \\\  \ \  \|\  \ \  \|\  \ \  \ \  \\ \  \
+ \ \   ____\ \   __  \ \  \\\  \ \  \\\  \ \  \ \  \\ \  \
+  \ \  \___|\ \  \ \  \ \  \\\  \ \  \\\  \ \  \ \  \\ \  \
+   \ \__\    \ \__\ \__\ \_______\ \_______\ \__\ \__\\ \__\
+    \|__|     \|__|\|__|\|_______|\|_______|\|__|\|__| \|__|
+         </code>
       </pre>
    </div>
    <div id="toolbar" class="toolbar">
@@ -133,7 +116,6 @@
          </div>
       </div>
    </div>
-
    <script>
       // Capturar o elemento de entrada de texto
       const inputElement = document.createElement('input');
@@ -146,7 +128,7 @@
 
       // Capturar o elemento de saída do terminal
       const outputElement = document.createElement('pre');
-      outputElement.classList.add('pre');
+      outputElement.classList.add('terminal');
       outputElement.style.color = '#feff00';
 
       // Adicionar elementos ao DOM
@@ -170,7 +152,7 @@
             const output = `> ${command}`;
             outputElement.textContent += output + '\n';
             processCommand(command);
-            outputElement.scrollTop = outputElement.scrollHeight; // Deslocar para baixo a cada nova entrada de comando
+            outputElement.scrollTop = outputElement.scrollHeight;
          }
       });
 
