@@ -1,181 +1,178 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-   <meta charset="utf-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <meta name="author" content="Obel">
-   <title>C64</title>
-   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-   <meta name="keywords" content="C64" />
-   <meta name="description" content="C64 - Website" />
-   <link rel="stylesheet" href="css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-   <style>
-      /* Estilos CSS existentes aqui */
-      .modalDialog {
-         position: fixed;
-         font-family: Arial, Helvetica, sans-serif;
-         top: -70px;
-         right: 0;
-         bottom: 0;
-         left: 0;
-         background: rgba(0,0,0,0.8);
-         z-index: 99999;
-         opacity:0;
-         -webkit-transition: opacity 400ms ease-in;
-         -moz-transition: opacity 400ms ease-in;
-         transition: opacity 400ms ease-in;
-         pointer-events: none;
-         }
-         .modalDialog:target {
-         opacity:1;
-         pointer-events: auto;
-         }
-         .modalDialog > div {
-         width: 800px;
-         position: relative;
-         margin: 10% auto;
-         padding: 5px 20px 13px 20px;
-         border-radius: 10px;
-         background: #fff;
-         background: -moz-linear-gradient(#fff, #999);
-         background: -webkit-linear-gradient(#fff, #999);
-         background: -o-linear-gradient(#fff, #999);
-         font-family: 'Press Start 2P', 'Helvetica Neue', Arial, sans-serif;
-         font-size:10px;
-         }
-         .close {
-         background: #606061;
-         color: #FFFFFF;
-         line-height: 25px;
-         position: absolute;
-         right: -12px;
-         text-align: center;
-         top: -10px;
-         width: 24px;
-         text-decoration: none;
-         font-weight: bold;
-         -webkit-border-radius: 12px;
-         -moz-border-radius: 12px;
-         border-radius: 12px;
-         -moz-box-shadow: 1px 1px 3px #000;
-         -webkit-box-shadow: 1px 1px 3px #000;
-         box-shadow: 1px 1px 3px #000;
-         }
-         .close:hover { background: #00d9ff; }
-         body {
-         font-family: 'Press Start 2P', 'Helvetica Neue', Arial, sans-serif;
-         webkit-tap-highlight-color: #222;
-         background-color:#5f53fe;
-         }
-         .cent {
-         position:absolute;
-         top:15%;
-         left:15%;
-         margin-top:-50px; /* this is half the height of your div*/  
-         margin-left:-100px; /*this is half of width of your div*/
-         background-color:#211bae;
-         color:#5f53fe;
-         width:80%;
-         height:80%;
-         }
-         p {
-         display: inline-block;
-         vertical-align: middle;
-         }
-         h1 {
-         font-size:18px !important;
-         text-align: center;
-         }
-         
-      .pre {
-         position: relative;
-         overflow-y: auto;
-         max-height: 300px; /* Defina uma altura máxima para o terminal */
-      }
-      
-      .pre::after {
-         content: '';
-         position: absolute;
-         top: 0;
-         right: 0;
-         width: 6px;
-         height: 14px;
-         background-color: #feff00;
-         animation: blink 0.7s step-end infinite;
-      }
-      
-      @keyframes blink {
-         50% {
-            background-color: transparent;
-         }
-      }
-   </style>
-   <link href="css/css.css" rel="stylesheet">
-   <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
-   <link href='css/Open-Sans-font.min.css' rel='stylesheet' type='text/css'>
-   <link href='css/Merriweather-font.min.css' rel='stylesheet' type='text/css'>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Commodore 64 · Simulador BASIC V2 — Marcos Santos</title>
+  <meta name="description" content="Simulador do Commodore 64 no navegador: tela do VIC-II, BASIC V2, som do SID, disquete virtual e um tour pela eletrônica e pela história do C64.">
+  <meta name="author" content="Marcos Santos">
+  <meta name="theme-color" content="#352879">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Commodore 64 · Simulador BASIC V2">
+  <meta property="og:description" content="Ligue o C64 no navegador. Digite HELP, HARDWARE ou HISTORIA.">
+  <meta property="og:image" content="https://aragonxpd154.github.io/landing-page-commodore-64/docs/preview.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-   <div class="cent">
-      <pre>
-       **** COMMODORE  64 BASIC V2 ****
-
-      64K RAM SYSTEM  38911 BASIC BYTES FREE
-
-      READY.
-      </pre>
-   </div>
-   <div id="toolbar" class="toolbar">
-      <div id="openModal" class="modalDialog">
-         <div>
-            <!-- Conteúdo existente aqui -->
-         </div>
+  <div class="room">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <div>
+          <p class="brand-title">COMMODORE 64</p>
+          <p class="brand-sub">Simulador BASIC V2 · 64K RAM · por Marcos Santos</p>
+        </div>
       </div>
-   </div>
+      <nav class="links" aria-label="Perfis">
+        <a href="https://github.com/aragonxpd154" target="_blank" rel="noopener">GitHub ↗</a>
+        <a href="https://www.linkedin.com/in/marcosobel" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </nav>
+    </header>
 
-   <script>
-      // Capturar o elemento de entrada de texto
-      const inputElement = document.createElement('input');
-      inputElement.type = 'text';
-      inputElement.style.width = '100%';
-      inputElement.style.border = 'none';
-      inputElement.style.background = 'transparent';
-      inputElement.style.color = '#feff00';
-      inputElement.style.outline = 'none';
+    <main class="stage">
+      <div class="machine">
+        <!-- ===================== MONITOR ===================== -->
+        <section class="monitor" aria-label="Monitor">
+          <div class="monitor-shell">
+            <div class="bezel" id="bezel">
+              <div class="crt" id="crt">
+                <canvas id="screen" role="img" aria-label="Tela do Commodore 64. Clique e digite comandos."></canvas>
+                <div class="fx fx-scan" aria-hidden="true"></div>
+                <div class="fx fx-vignette" aria-hidden="true"></div>
+                <div class="fx fx-glare" aria-hidden="true"></div>
+                <textarea id="kbd-proxy" aria-label="Teclado do Commodore 64" autocapitalize="characters"
+                  autocomplete="off" autocorrect="off" spellcheck="false" inputmode="text"></textarea>
+              </div>
+            </div>
+            <div class="monitor-panel">
+              <span class="panel-label">COLOR VIDEO MONITOR</span>
+              <span class="grille" aria-hidden="true"></span>
+              <div class="panel-controls">
+                <button type="button" class="knob" id="btn-turbo" title="Turbo (25x)" aria-label="Turbo">»</button>
+                <button type="button" class="knob" id="btn-sound" title="Som do SID" aria-label="Som" aria-pressed="true">♪</button>
+                <button type="button" class="knob" id="btn-full" title="Tela cheia" aria-label="Tela cheia">⛶</button>
+                <button type="button" class="power-btn" data-power title="Liga / desliga" aria-label="Liga / desliga" aria-pressed="false"><i class="led"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="monitor-foot" aria-hidden="true"></div>
+        </section>
 
-      // Capturar o elemento de saída do terminal
-      const outputElement = document.createElement('pre');
-      outputElement.classList.add('pre');
-      outputElement.style.color = '#feff00';
+        <!-- ===================== COMPUTADOR ===================== -->
+        <section class="computer" aria-label="Teclado do computador">
+          <div class="case">
+            <div class="case-top">
+              <div class="plate">
+                <span>SIMULADOR 64</span>
+                <span class="plate-sub">BASIC V2 · 64K RAM</span>
+              </div>
+              <div class="palette-strip" aria-hidden="true">
+                <i style="--c:#000000"></i><i style="--c:#FFFFFF"></i><i style="--c:#68372B"></i><i style="--c:#70A4B2"></i>
+                <i style="--c:#6F3D86"></i><i style="--c:#588D43"></i><i style="--c:#352879"></i><i style="--c:#B8C76F"></i>
+                <i style="--c:#6F4F25"></i><i style="--c:#433900"></i><i style="--c:#9A6759"></i><i style="--c:#444444"></i>
+                <i style="--c:#6C6C6C"></i><i style="--c:#9AD284"></i><i style="--c:#6C5EB5"></i><i style="--c:#959595"></i>
+              </div>
+              <button type="button" class="case-power" data-power aria-label="Liga / desliga" aria-pressed="false">
+                <i class="led"></i><span>POWER</span>
+              </button>
+            </div>
+            <div class="deck" id="keyboard"></div>
+          </div>
+        </section>
+      </div>
 
-      // Adicionar elementos ao DOM
-      const centElement = document.querySelector('.cent');
-      centElement.appendChild(inputElement);
-      centElement.appendChild(outputElement);
+      <!-- ===================== MANUAL ===================== -->
+      <aside class="manual" aria-label="Manual de bolso">
+        <div class="manual-cover">
+          <p class="pix">MANUAL DE BOLSO</p>
+          <p>Clique na tela e digite como num C64 de verdade. <kbd>Enter</kbd> é o <b>RETURN</b>.</p>
+        </div>
 
-      // Função para processar o comando do usuário
-      function processCommand(command) {
-         // Lógica de processamento do comando aqui
-         // Exemplo: exibir a mensagem de comando inválido
-         const output = `Comando inválido: ${command}`;
-         outputElement.textContent += output + '\n';
-      }
+        <h2>Comece por aqui</h2>
+        <div class="chips">
+          <button type="button" data-cmd="HELP">HELP</button>
+          <button type="button" data-cmd="HARDWARE">HARDWARE</button>
+          <button type="button" data-cmd="HISTORIA">HISTORIA</button>
+          <button type="button" data-cmd="COMANDOS">COMANDOS</button>
+        </div>
 
-      // Manipulador de eventos para capturar a entrada do usuário
-      inputElement.addEventListener('keydown', function(event) {
-         if (event.key === 'Enter') {
-            const command = inputElement.value;
-            inputElement.value = '';
-            const output = `> ${command}`;
-            outputElement.textContent += output + '\n';
-            processCommand(command);
-            outputElement.scrollTop = outputElement.scrollHeight; // Deslocar para baixo a cada nova entrada de comando
-         }
+        <h2>Eletronica por partes</h2>
+        <div class="chips small">
+          <button type="button" data-cmd="HARDWARE DIAGRAMA">DIAGRAMA</button>
+          <button type="button" data-cmd="HARDWARE CPU">6510</button>
+          <button type="button" data-cmd="HARDWARE VIC">VIC-II</button>
+          <button type="button" data-cmd="HARDWARE SID">SID</button>
+          <button type="button" data-cmd="HARDWARE CIA">CIA</button>
+          <button type="button" data-cmd="HARDWARE MAPA">MAPA</button>
+          <button type="button" data-cmd="HARDWARE MEMORIA">MEMORIA</button>
+          <button type="button" data-cmd="HARDWARE ENERGIA">FONTE</button>
+        </div>
+
+        <h2>Disquete no drive 8</h2>
+        <div class="chips small">
+          <button type="button" data-cmd='LOAD"$",8|LIST'>LOAD"$",8</button>
+          <button type="button" data-cmd='LOAD"MAZE",8|RUN'>▶ MAZE</button>
+          <button type="button" data-cmd='LOAD"CORES",8|RUN'>▶ CORES</button>
+          <button type="button" data-cmd='LOAD"MUSICA",8|RUN'>▶ MUSICA</button>
+          <button type="button" data-cmd='LOAD"ADIVINHE",8|RUN'>▶ ADIVINHE</button>
+          <button type="button" data-cmd='LOAD"ESTRELAS",8|RUN'>▶ ESTRELAS</button>
+          <button type="button" data-cmd='LOAD"PRIMOS",8|RUN'>▶ PRIMOS</button>
+        </div>
+        <p class="note">Programa rodando? <kbd>Esc</kbd> é o <b>RUN/STOP</b>. Use <code>SAVE"NOME",8</code> para gravar o seu no navegador.</p>
+
+        <h2>Cores do VIC-II</h2>
+        <div class="swatches" role="group" aria-label="Cor da borda">
+          <span>Borda</span>
+          <div class="swatch-row" data-poke="53280"></div>
+        </div>
+        <div class="swatches" role="group" aria-label="Cor do fundo">
+          <span>Fundo</span>
+          <div class="swatch-row" data-poke="53281"></div>
+        </div>
+
+        <h2>Teclas</h2>
+        <dl class="keys">
+          <dt><kbd>Esc</kbd></dt><dd>RUN/STOP</dd>
+          <dt><kbd>Page Up</kbd></dt><dd>RESTORE</dd>
+          <dt><kbd>Home</kbd> / <kbd>End</kbd></dt><dd>HOME / CLR</dd>
+          <dt><kbd>⇧</kbd>+<kbd>⌫</kbd></dt><dd>INST</dd>
+          <dt><kbd>Ctrl</kbd>+<kbd>1‑8</kbd></dt><dd>cores 0‑7</dd>
+          <dt><kbd>Alt</kbd>+<kbd>1‑8</kbd></dt><dd>cores 8‑15</dd>
+          <dt><kbd>Ctrl</kbd>+<kbd>9</kbd>/<kbd>0</kbd></dt><dd>RVS ON / OFF</dd>
+        </dl>
+      </aside>
+    </main>
+
+    <footer class="footer">
+      <p>Feito por <a href="https://github.com/aragonxpd154" target="_blank" rel="noopener">Marcos Santos</a> em HTML, CSS e JavaScript puros — sem bibliotecas.</p>
+      <p class="fine">Fonte Press Start 2P (SIL OFL 1.1). Commodore 64 é marca de seus respectivos proprietários; este é um projeto de fã, sem afiliação.</p>
+    </footer>
+  </div>
+
+  <div id="sr-screen" class="sr-only" aria-live="polite"></div>
+  <noscript><p class="noscript">Este simulador precisa de JavaScript ligado.</p></noscript>
+
+  <script src="js/chargen.js"></script>
+  <script src="js/screen.js"></script>
+  <script src="js/sid.js"></script>
+  <script src="js/basic.js"></script>
+  <script src="js/content.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    /* amostras de cor clicáveis: digitam o POKE no simulador */
+    document.querySelectorAll('.swatch-row').forEach((row) => {
+      C64_PALETTE.forEach((hex, i) => {
+        const b = document.createElement('button');
+        b.type = 'button';
+        b.style.setProperty('--c', hex);
+        b.title = i + ' · ' + C64_COLOR_NAMES[i];
+        b.setAttribute('aria-label', 'POKE ' + row.dataset.poke + ',' + i + ' (' + C64_COLOR_NAMES[i] + ')');
+        b.addEventListener('click', () => { window.c64.typeCommand('POKE ' + row.dataset.poke + ',' + i); b.blur(); });
+        row.appendChild(b);
       });
-
-      // Focar no campo de entrada ao carregar a página
-      inputElement.focus();
-   </script>
+    });
+  </script>
 </body>
 </html>
