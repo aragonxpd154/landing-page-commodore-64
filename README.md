@@ -6,7 +6,7 @@
 
 **Ligue um Commodore 64 no navegador.**<br>
 Tela do VIC-II desenhada pixel a pixel, BASIC V2 de verdade, som do SID, disquete virtual<br>
-e um tour pela eletrônica e pela história da máquina — tudo dentro do próprio terminal.
+e um tour pela eletrônica e pela história da máquina   tudo dentro do próprio terminal.
 
 [**▶ Abrir o simulador**](https://aragonxpd154.github.io/landing-page-commodore-64/) &nbsp;·&nbsp;
 [Comandos](#-comandos) &nbsp;·&nbsp;
@@ -36,7 +36,7 @@ READY.
 
 ## ✦ Sobre o projeto
 
-Este repositório começou como uma landing page com a tela azul do C64. Agora ele é um **simulador funcional**: você liga a máquina, vê o boot original, digita em um editor de tela igual ao do C64 e roda programas em BASIC — com `POKE`, `PEEK`, cores, som e disquete.
+Este repositório começou como uma landing page com a tela azul do C64. Agora ele é um **simulador funcional**: você liga a máquina, vê o boot original, digita em um editor de tela igual ao do C64 e roda programas em BASIC   com `POKE`, `PEEK`, cores, som e disquete.
 
 Como no meu projeto do [Atari VCS 2600](https://github.com/aragonxpd154/landing-page-atari-vcs-2600), o terminal também conta quem fez o projeto (`HELP` / `SOBRE`) e abre a máquina por dentro (`HARDWARE`), agora com uma seção de **história** (`HISTORIA`).
 
@@ -46,8 +46,8 @@ Tudo é feito em **HTML, CSS e JavaScript puros**: sem frameworks, sem build e s
 
 | | |
 |---|---|
-| 🖥️ **Tela do VIC-II real** | 40×25 caracteres em um canvas de 384×272 (320×200 + borda), paleta de 16 cores, memória de tela em `1024` e Color RAM em `55296` — dá para escrever direto com `POKE`. |
-| 🔤 **Conjunto de caracteres PETSCII** | Letras em ROM de caracteres própria (`js/chargen.js`) e gráficos PETSCII — linhas, blocos, naipes, diagonais — desenhados pixel a pixel. |
+| 🖥️ **Tela do VIC-II real** | 40×25 caracteres em um canvas de 384×272 (320×200 + borda), paleta de 16 cores, memória de tela em `1024` e Color RAM em `55296`   dá para escrever direto com `POKE`. |
+| 🔤 **Conjunto de caracteres PETSCII** | Letras em ROM de caracteres própria (`js/chargen.js`) e gráficos PETSCII   linhas, blocos, naipes, diagonais   desenhados pixel a pixel. |
 | ⌨️ **Editor de tela do C64** | Cursor piscando, linhas lógicas de 80 colunas, `INST/DEL`, *quote mode*, cores com `CTRL`/`C=` e reverso (`RVS ON/OFF`). |
 | 🧠 **BASIC V2** | Palavras-chave sem espaço (`FORI=1TO10`), variáveis com 2 letras significativas, `-1` como verdadeiro e as mensagens de erro originais (`?SYNTAX  ERROR IN 10`). |
 | 🔊 **SID de 3 vozes** | Triângulo, dente-de-serra, pulso e ruído com envelope ADSR via Web Audio, controlado pelos registradores `54272–54296`. |
@@ -60,16 +60,16 @@ Tudo é feito em **HTML, CSS e JavaScript puros**: sem frameworks, sem build e s
 
 <table>
   <tr>
-    <td width="50%"><img src="docs/help.png" alt="Comando HELP"><br><sub><b>HELP / SOBRE</b> — quem fez o projeto</sub></td>
-    <td width="50%"><img src="docs/hardware.png" alt="HARDWARE DIAGRAMA"><br><sub><b>HARDWARE DIAGRAMA</b> — os chips no barramento</sub></td>
+    <td width="50%"><img src="docs/help.png" alt="Comando HELP"><br><sub><b>HELP / SOBRE</b>   quem fez o projeto</sub></td>
+    <td width="50%"><img src="docs/hardware.png" alt="HARDWARE DIAGRAMA"><br><sub><b>HARDWARE DIAGRAMA</b>   os chips no barramento</sub></td>
   </tr>
   <tr>
-    <td><img src="docs/historia.png" alt="Comando HISTORIA"><br><sub><b>HISTORIA</b> — de 1954 a 1994</sub></td>
-    <td><img src="docs/mapa.png" alt="HARDWARE MAPA"><br><sub><b>HARDWARE MAPA</b> — mapa de memória</sub></td>
+    <td><img src="docs/historia.png" alt="Comando HISTORIA"><br><sub><b>HISTORIA</b>   de 1954 a 1994</sub></td>
+    <td><img src="docs/mapa.png" alt="HARDWARE MAPA"><br><sub><b>HARDWARE MAPA</b>   mapa de memória</sub></td>
   </tr>
   <tr>
-    <td><img src="docs/disquete.png" alt="Diretório do disquete"><br><sub><b>LOAD"$",8</b> + <b>LIST</b> — diretório do disquete</sub></td>
-    <td><img src="docs/maze.png" alt="Labirinto 10 PRINT"><br><sub><b>MAZE</b> — o clássico <code>10 PRINT</code></sub></td>
+    <td><img src="docs/disquete.png" alt="Diretório do disquete"><br><sub><b>LOAD"$",8</b> + <b>LIST</b>   diretório do disquete</sub></td>
+    <td><img src="docs/maze.png" alt="Labirinto 10 PRINT"><br><sub><b>MAZE</b>   o clássico <code>10 PRINT</code></sub></td>
   </tr>
 </table>
 
@@ -205,7 +205,7 @@ No simulador, `HARDWARE` detalha cada um desses blocos, o mapa de memória compl
 | **1986** | C64C, com gabinete novo, chips HMOS e a interface gráfica GEOS |
 | **1994** | Falência da Commodore e fim da produção |
 
-Com estimativas entre **12,5 e 17 milhões** de unidades, é o modelo de computador mais vendido da história — e o berço da demoscene e da música SID.
+Com estimativas entre **12,5 e 17 milhões** de unidades, é o modelo de computador mais vendido da história   e o berço da demoscene e da música SID.
 
 ## ✦ Por dentro do simulador
 
@@ -266,7 +266,7 @@ python3 -m http.server 8000
 
 <div align="center">
 
-Feito por **Marcos Santos** — radialista e técnico em transmissão de rádio e TV.
+Feito por **Marcos Santos**   radialista e técnico em transmissão de rádio e TV.
 
 [GitHub](https://github.com/aragonxpd154) · [LinkedIn](https://www.linkedin.com/in/marcosobel)
 
